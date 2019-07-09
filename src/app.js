@@ -26,14 +26,23 @@ function Tasks(){
      <ul>
        {task.map( (oneTask) => 
           <li key={oneTask.id}>
+
             <details>
               <summary>
                 <span>{oneTask.title}</span>
                 <span>{oneTask.status}</span>
                 <span>{oneTask.assignee}</span>
-
+                
+                <form action={API+"/"+oneTask.id +"/images" } method="post" encType="multipart/form-data">
+                  <label >
+                    <input type="file" name="file" />
+                  </label>
+                  <button>Submit the form</button>
+                </form>
+              
               </summary>
               {oneTask.description}
+              <img src={oneTask.pic} />
             </details>
           </li>
       
