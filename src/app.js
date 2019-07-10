@@ -43,6 +43,7 @@ function Tasks(){
               </summary>
               {oneTask.description}
               <img src={oneTask.pic} />
+              <img src={oneTask.resizedPic} />
             </details>
           </li>
       
